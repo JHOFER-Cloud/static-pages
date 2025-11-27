@@ -313,6 +313,15 @@ main {
   /* justify-content: center; */
 }
 
+.banners a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.banners a:hover {
+  opacity: 0.8;
+}
+
 h1 {
   margin: 0;
 }
