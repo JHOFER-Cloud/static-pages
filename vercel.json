@@ -1,0 +1,26 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://me.jhofer.de",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "pages.jhofer.de"
+        }
+      ]
+    },
+    {
+      "source": "/:path*",
+      "destination": "https://me.jhofer.de/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "pages.jhofer.de"
+        }
+      ]
+    }
+  ]
+}
