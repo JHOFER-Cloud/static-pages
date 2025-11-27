@@ -2,7 +2,6 @@
 <head>
   <title>Page title</title>
   <link rel="stylesheet" href="/bundle.css" />
-  <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 </head>
 <body>
   <main>
@@ -140,8 +139,13 @@
 
 
   </main>
-  <script>
-    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  <script type="module">
+    // Vercel Speed Insights
+    import { injectSpeedInsights } from 'https://cdn.jsdelivr.net/npm/@vercel/speed-insights@1.2.0/+esm';
+    injectSpeedInsights();
+    
+    // Vercel Analytics
+    import { inject } from 'https://cdn.jsdelivr.net/npm/@vercel/analytics@1.5.0/+esm';
+    inject();
   </script>
-  <script defer src="https://cdn.vercel-analytics.com/v1/script.js"></script>
 </body>
