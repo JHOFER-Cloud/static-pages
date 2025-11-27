@@ -15,13 +15,13 @@
       ]
     },
     {
-      "source": "/:path*",
-      "destination": "https://me.jhofer.de/:path*",
+      "source": "/:path+",
+      "destination": "https://pages.jhofer.de/:path+",
       "permanent": true,
       "has": [
         {
           "type": "host",
-          "value": "pages.jhofer.de"
+          "value": "me.jhofer.de"
         }
       ]
     }
