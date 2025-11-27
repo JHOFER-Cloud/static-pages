@@ -1,0 +1,32 @@
+<!doctype html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  {% if favicon %}
+  <link rel="icon" href="{{ favicon }}">
+  {% else %}
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/43563019?v=4">
+  {% endif %}
+  <link rel="stylesheet" href="/bundle.css" />
+  {% if pageStyles %}
+  <style>
+    {{ pageStyles | safe }}
+  </style>
+  {% endif %}
+  {% if pageScripts %}
+  <script src="{{ pageScripts }}"></script>
+  {% endif %}
+</head>
+<body>
+  {{ content | safe }}
+  <script type="module">
+    // Vercel Speed Insights
+    import { injectSpeedInsights } from 'https://cdn.jsdelivr.net/npm/@vercel/speed-insights@1.2.0/+esm';
+    injectSpeedInsights();
+
+    // Vercel Analytics
+    import { inject } from 'https://cdn.jsdelivr.net/npm/@vercel/analytics@1.5.0/+esm';
+    inject();
+  </script>
+</body>

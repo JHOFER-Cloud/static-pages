@@ -1,10 +1,9 @@
-<!doctype html>
-<head>
-  <title>Page title</title>
-  <link rel="stylesheet" href="/bundle.css" />
-</head>
-<body>
-  <main>
+---
+layout: base.njk
+title: ojsef39
+pageScripts: /assets/playlist-mobile.js
+---
+<main>
     <div class="box">
       <div class="title-bar">
         <button aria-label="Close" class="close"></button>
@@ -41,13 +40,15 @@
               >Spotify</a
             >
           </li>
-          <li><a href="https://www.snapchat.com/add/ojsef39">Snapchat</a></li>
-          <li><a href="https://bere.al/ojsef39">BeReal</a></li>
+          <li><a href="https://music.apple.com/profile/ojsef39">Apple Music</a></li>
           <li>
             <a href="https://soundcloud.com/josef-hofer-298740873"
               >Soundcloud</a
             >
           </li>
+          <li><a href="https://discordapp.com/users/ojsef39">Discord</a></li>
+          <li><a href="https://chaos.social/@ojsef39">Mastodon (Chaos)</a></li>
+          <li><a href="https://mastodon.de/@ojsef39">Mastodon (DE)</a></li>
         </ul>
       </div>
 
@@ -74,7 +75,7 @@
       </div>
       <div style="padding: 1rem;">
         <div class="project-item">
-          <a href="https://github.com/ojsef38">GitHub Profile</a>
+          <a href="https://github.com/ojsef39">GitHub Profile</a>
           <p class="project-desc">My GitHub profile with all my open source projects</p>
         </div>
         <div class="project-item">
@@ -82,12 +83,12 @@
           <p class="project-desc">Real-time status page for my infrastructure and services</p>
         </div>
         <div class="project-item">
-          <a href="https://github.com/ojsef39/nix-personal">nix-personal</a>
-          <p class="project-desc">Personal NixOS configuration for my systems</p>
+          <a href="https://github.com/JHOFER-Cloud">JHOFER-Cloud</a>
+          <p class="project-desc">My homelab stuff, most projects are private tho</p>
         </div>
         <div class="project-item">
-          <a href="https://github.com/JHOFER-Cloud/helm-charts">helm-charts</a>
-          <p class="project-desc">Collection of Kubernetes Helm charts for cloud deployments</p>
+          <a href="https://github.com/ojsef39/nix-personal">nix-personal</a>
+          <p class="project-desc">Personal NixOS configuration for my systems</p>
         </div>
         <div class="project-item">
           <a href="https://github.com/ojsef39/nix-base">nix-base</a>
@@ -130,24 +131,22 @@
 
 
     <div class="box banners">
-        <a aria-label="NeoVim" href="https://neovim.io/"> <img src="/assets/neovim.gif" alt="neovim" style="width: 88px; height: 31px; object-fit: contain;"> </a>
-        <img src="/assets/i_like_computer.png" alt="i like computer" style="width: 88px; height: 31px; object-fit: contain;">
+        <a aria-label="NeoVim" href="https://neovim.io/"> <img src="/assets/banners/neovim.gif" alt="neovim" style="width: 88px; height: 31px; object-fit: contain;"> </a>
+        <a aria-label="NixOS" href="https://fedi.underpowe.red/notice/An1zXpw0eMdAKN3mgy" target="_blank" class="button" title="nixos!">
+            <img src="/assets/banners/nix_dark.gif" alt="nixos" style="width: 88px; height: 31px; object-fit: contain;">
+        </a>
+        <img src="/assets/banners/i_like_computer.png" alt="i like computer" style="width: 88px; height: 31px; object-fit: contain;">
+        <img src="/assets/banners/mac-works.gif" alt="mac just works" style="width: 88px; height: 31px; object-fit: contain;">
+        <img src="/assets/banners/linux-p.gif" alt="linux powered" style="width: 88px; height: 31px; object-fit: contain;">
         <iframe src="//incr.easrng.net/badge?key=ojsef39" style="background: url(//incr.easrng.net/bg.gif)" title="increment badge" width="88" height="31" frameborder="0"></iframe>
-        <a href="https://www.tumblr.com/riding-with-the-wild-hunt/767435793628348416/a-whole-bunch-of-gazan-mutual-aid-projects-and?source=share" target="”_blank”"><img src="assets/freepalestine.gif" alt="Free palestine!!"></a>
+        <img src="/assets/banners/antinazi.gif" alt="antinazi" style="width: 88px; height: 31px; object-fit: contain;">
+        <img src="/assets/banners/stand-with-ukraine.png" alt="stand with ukraine" style="width: 88px; height: 31px; object-fit: contain;">
+        <a href="https://www.tumblr.com/riding-with-the-wild-hunt/767435793628348416/a-whole-bunch-of-gazan-mutual-aid-projects-and?source=share" target="”_blank”"><img src="assets/banners/freepalestine.gif" alt="Free palestine!!"></a>
         <div class="footer">
-                Made with ❤️ by <a href="https://frostplexx.neocities.org/">Frostplexx</a>
+                Made with ❤️ by <a href="https://frostplexx.neocities.org/">Frostplexx</a>, you can find the source code <a
+                    href="https://github.com/JHOFER-Cloud/static-pages">here</a>
         </div>
     </div>
 
 
   </main>
-  <script type="module">
-    // Vercel Speed Insights
-    import { injectSpeedInsights } from 'https://cdn.jsdelivr.net/npm/@vercel/speed-insights@1.2.0/+esm';
-    injectSpeedInsights();
-    
-    // Vercel Analytics
-    import { inject } from 'https://cdn.jsdelivr.net/npm/@vercel/analytics@1.5.0/+esm';
-    inject();
-  </script>
-</body>
