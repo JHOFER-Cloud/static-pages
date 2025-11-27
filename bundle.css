@@ -121,6 +121,12 @@ side-by-side > .box {
   color: var(--overlay);
   transition: color 200ms ease;
   font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.playlist-name:hover {
+  color: var(--accent);
+  text-decoration: none;
 }
 
 .playlist-name::before {
