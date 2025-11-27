@@ -2,6 +2,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("bundle.css");
   eleventyConfig.addPassthroughCopy("./fonts/MapleMono-Regular.woff2");
   eleventyConfig.addPassthroughCopy("./assets");
+  eleventyConfig.setIncludesDirectory("templates");
 
   // Cache for playlist names to avoid repeated API calls
   const playlistCache = new Map();
