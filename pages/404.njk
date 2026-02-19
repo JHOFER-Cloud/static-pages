@@ -30,15 +30,10 @@ permalink: 404.html
           </svg>
           Go Back
         </button>
-        <a href="/" class="home-button">
-          <svg class="button-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 8L8 2L14 8M3 8V14H6V11H10V14H13V8" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/>
-          </svg>
-          Home
-        </a>
       </div>
     </div>
   </div>
+  {% include "footer.njk" %}
 </main>
 
 <style>
@@ -84,8 +79,7 @@ permalink: 404.html
     width: 100%;
   }
 
-  .back-button,
-  .home-button {
+  .back-button {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
     font-family: "MapleMono", monospace;
@@ -105,16 +99,14 @@ permalink: 404.html
     flex-shrink: 0;
   }
 
-  .back-button:hover,
-  .home-button:hover {
+  .back-button:hover {
     background: var(--overlay);
     color: var(--base);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
 
-  .back-button:active,
-  .home-button:active {
+  .back-button:active {
     transform: translateY(0);
   }
 
@@ -152,8 +144,7 @@ permalink: 404.html
       width: 100%;
     }
 
-    .back-button,
-    .home-button {
+    .back-button {
       width: 100%;
       justify-content: center;
     }
@@ -168,8 +159,7 @@ permalink: 404.html
       font-size: 1rem;
     }
 
-    .back-button,
-    .home-button {
+    .back-button {
       padding: 0.6rem 1.2rem;
       font-size: 0.9rem;
     }
