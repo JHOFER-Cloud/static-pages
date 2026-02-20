@@ -10,6 +10,7 @@
   --surface: rgb(54, 58, 79);
   --crust: rgb(17, 17, 27);
   --text: rgb(147, 154, 183);
+  --subtext: rgb(202, 211, 245);
   --accent: rgb(166, 218, 149);
   --sapphire: rgb(125, 196, 228);
 }
@@ -48,7 +49,7 @@ h1 {
 .project-desc {
   margin: 0;
   padding-left: 1rem;
-  color: var(--text);
+  color: var(--subtext);
   font-size: 0.9rem;
   text-align: left;
 }
@@ -201,6 +202,12 @@ a:focus-visible {
   outline: 2px solid var(--sapphire);
   outline-offset: 2px;
   border-radius: 2px;
+}
+
+a[href^="mailto"] {
+  display: inline-block;
+  padding: 0.25rem 0;
+  min-height: 24px;
 }
 
 body {
