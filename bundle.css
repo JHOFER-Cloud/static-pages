@@ -300,6 +300,39 @@ main {
   color: var(--text);
 }
 
+.title-bar button.back {
+  background-color: var(--overlay);
+  overflow: visible;
+}
+
+.title-bar button.back::before,
+.title-bar button.back::after {
+  content: "";
+  position: absolute;
+  background-color: var(--border);
+}
+
+/* horizontal shaft */
+.title-bar button.back::before {
+  width: 70%;
+  height: 4px;
+  top: 50%;
+  left: 15%;
+  transform: translateY(-50%);
+}
+
+/* arrowhead — a square rotated 45deg, clipped to show only the left-pointing chevron */
+.title-bar button.back::after {
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  border-left: 4px solid var(--border);
+  border-bottom: 4px solid var(--border);
+  top: 50%;
+  left: 20%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
 .title-bar button.resize {
   background:
     linear-gradient(var(--border) 0%, var(--border) 100%) left 58%,
