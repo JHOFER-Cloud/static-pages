@@ -1,4 +1,24 @@
+import { readFileSync } from "fs";
+
+let vercelOwnerId = process.env.VERCEL_ORG_ID || "";
+let vercelProjectId = process.env.VERCEL_PROJECT_ID || "";
+
+if (!vercelOwnerId || !vercelProjectId) {
+  try {
+    const vercelProject = JSON.parse(
+      readFileSync(".vercel/project.json", "utf-8"),
+    );
+    vercelOwnerId = vercelOwnerId || vercelProject.orgId || "";
+    vercelProjectId = vercelProjectId || vercelProject.projectId || "";
+  } catch {
+    // .vercel/project.json not present (e.g. CI or fresh clone)
+  }
+}
+
 export default function (eleventyConfig) {
+  eleventyConfig.addGlobalData("vercelOwnerId", vercelOwnerId);
+  eleventyConfig.addGlobalData("vercelProjectId", vercelProjectId);
+
   eleventyConfig.addPassthroughCopy("bundle.css");
   eleventyConfig.addPassthroughCopy("./fonts/MapleMono-Regular.woff2");
   eleventyConfig.addPassthroughCopy("./assets");

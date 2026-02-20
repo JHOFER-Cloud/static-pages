@@ -6,7 +6,7 @@ permalink: 404.html
 <main>
   <div class="box error-page">
     <div class="title-bar">
-      <button aria-label="Close" class="close"></button>
+      <button onclick="goBack()" aria-label="Go back" class="back"></button>
       <h1 class="title">404 - Page Not Found</h1>
       <button aria-label="Resize" class="resize"></button>
     </div>
@@ -23,22 +23,9 @@ permalink: 404.html
       <p class="error-description">
         The page you're looking for might have been moved, deleted, or never existed in the first place.
       </p>
-      <div class="error-actions">
-        <button onclick="goBack()" class="back-button" id="backBtn">
-          <svg class="button-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8 2L2 8L8 14M2 8H14" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/>
-          </svg>
-          Go Back
-        </button>
-        <a href="/" class="home-button">
-          <svg class="button-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 8L8 2L14 8M3 8V14H6V11H10V14H13V8" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/>
-          </svg>
-          Home
-        </a>
-      </div>
     </div>
   </div>
+  {% include "footer.njk" %}
 </main>
 
 <style>
@@ -66,68 +53,14 @@ permalink: 404.html
   .error-message {
     font-size: 1.3rem;
     font-weight: 500;
-    color: var(--text);
+    color: var(--subtext);
     margin: 0 0 1rem 0;
   }
 
   .error-description {
-    color: var(--overlay);
+    color: var(--subtext);
     margin: 0 0 2rem 0;
     max-width: 500px;
-  }
-
-  .error-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .back-button,
-  .home-button {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    font-family: "MapleMono", monospace;
-    border: 2px solid var(--border);
-    background: var(--surface);
-    color: var(--text);
-    text-decoration: none;
-    border-radius: 4px;
-    transition: all 200ms ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    box-sizing: border-box;
-  }
-
-  .button-icon {
-    flex-shrink: 0;
-  }
-
-  .back-button:hover,
-  .home-button:hover {
-    background: var(--overlay);
-    color: var(--base);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  }
-
-  .back-button:active,
-  .home-button:active {
-    transform: translateY(0);
-  }
-
-  .back-button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-
-  .back-button:disabled:hover {
-    background: var(--surface);
-    color: var(--text);
-    transform: none;
-    box-shadow: none;
   }
 
   @media screen and (max-width: 768px) {
@@ -146,17 +79,6 @@ permalink: 404.html
     .http-cat {
       margin-bottom: 1rem;
     }
-
-    .error-actions {
-      flex-direction: column;
-      width: 100%;
-    }
-
-    .back-button,
-    .home-button {
-      width: 100%;
-      justify-content: center;
-    }
   }
 
   @media screen and (max-width: 480px) {
@@ -167,32 +89,5 @@ permalink: 404.html
     .error-message {
       font-size: 1rem;
     }
-
-    .back-button,
-    .home-button {
-      padding: 0.6rem 1.2rem;
-      font-size: 0.9rem;
-    }
   }
 </style>
-
-<script>
-  function goBack() {
-    // Check if there's history to go back to
-    if (window.history.length > 1) {
-      window.history.back();
-    } else {
-      // If no history (e.g., direct link), go to homepage
-      window.location.href = '/';
-    }
-  }
-
-  // Disable back button if there's no history
-  window.addEventListener('DOMContentLoaded', function() {
-    const backBtn = document.getElementById('backBtn');
-    if (window.history.length <= 1) {
-      backBtn.disabled = true;
-      backBtn.textContent = '← No Previous Page';
-    }
-  });
-</script>
