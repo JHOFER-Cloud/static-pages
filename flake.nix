@@ -33,6 +33,7 @@
             node2nix
             nodejs
             prettier
+            nodePackages.vercel
             (pkgs.writeShellScriptBin "d-run" "npm run dev")
           ];
         };

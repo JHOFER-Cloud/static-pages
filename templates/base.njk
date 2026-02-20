@@ -29,4 +29,13 @@
     import { inject } from 'https://cdn.jsdelivr.net/npm/@vercel/analytics@1.5.0/+esm';
     inject();
   </script>
+  {% if vercelOwnerId and vercelProjectId %}
+  <script
+    src="https://vercel.live/_next-live/feedback/feedback.js"
+    data-explicit-opt-in="true"
+    data-owner-id="{{ vercelOwnerId }}"
+    data-project-id="{{ vercelProjectId }}"
+    data-branch="main"
+  ></script>
+  {% endif %}
 </body>

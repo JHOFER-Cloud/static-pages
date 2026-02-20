@@ -1,4 +1,19 @@
+import { readFileSync } from "fs";
+
+let vercelProject = {};
+try {
+  vercelProject = JSON.parse(readFileSync(".vercel/project.json", "utf-8"));
+} catch {
+  // .vercel/project.json not present (e.g. CI or fresh clone)
+}
+
 export default function (eleventyConfig) {
+  eleventyConfig.addGlobalData("vercelOwnerId", vercelProject.orgId || "");
+  eleventyConfig.addGlobalData(
+    "vercelProjectId",
+    vercelProject.projectId || "",
+  );
+
   eleventyConfig.addPassthroughCopy("bundle.css");
   eleventyConfig.addPassthroughCopy("./fonts/MapleMono-Regular.woff2");
   eleventyConfig.addPassthroughCopy("./assets");
