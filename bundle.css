@@ -10,7 +10,9 @@
   --surface: rgb(54, 58, 79);
   --crust: rgb(17, 17, 27);
   --text: rgb(147, 154, 183);
+  --subtext: rgb(202, 211, 245);
   --accent: rgb(166, 218, 149);
+  --sapphire: rgb(125, 196, 228);
 }
 
 * {
@@ -47,7 +49,7 @@ h1 {
 .project-desc {
   margin: 0;
   padding-left: 1rem;
-  color: var(--overlay);
+  color: var(--subtext);
   font-size: 0.9rem;
   text-align: left;
 }
@@ -118,14 +120,14 @@ side-by-side > .box {
   align-items: center;
   gap: 0.5rem;
   padding: 0.35rem 0.5rem;
-  color: var(--overlay);
+  color: var(--accent);
   transition: color 200ms ease;
   font-size: 0.95rem;
   text-decoration: none;
 }
 
 .playlist-name:hover {
-  color: var(--accent);
+  color: var(--sapphire);
   text-decoration: none;
 }
 
@@ -137,7 +139,7 @@ side-by-side > .box {
 }
 
 .playlist-item:hover .playlist-name {
-  color: var(--accent);
+  color: var(--sapphire);
 }
 
 .playlist-item:hover .playlist-name::before {
@@ -184,16 +186,34 @@ ul li {
   margin-bottom: 0.5rem;
 }
 
+ul li a {
+  display: inline-block;
+  min-height: 24px;
+  padding: 0.15rem 0;
+}
+
 ul li:last-child {
   margin-bottom: 0;
 }
 
 a {
-  color: var(--overlay);
+  color: var(--accent);
 }
 
 a:hover {
-  color: var(--accent);
+  color: var(--sapphire);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--sapphire);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+a[href^="mailto"] {
+  display: inline-block;
+  padding: 0.25rem 0;
+  min-height: 24px;
 }
 
 body {
@@ -300,6 +320,39 @@ main {
   color: var(--text);
 }
 
+.title-bar button.back {
+  background-color: var(--overlay);
+  overflow: visible;
+}
+
+.title-bar button.back::before,
+.title-bar button.back::after {
+  content: "";
+  position: absolute;
+  background-color: var(--border);
+}
+
+/* horizontal shaft */
+.title-bar button.back::before {
+  width: 70%;
+  height: 4px;
+  top: 50%;
+  left: 15%;
+  transform: translateY(-50%);
+}
+
+/* arrowhead — a square rotated 45deg, clipped to show only the left-pointing chevron */
+.title-bar button.back::after {
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  border-left: 4px solid var(--border);
+  border-bottom: 4px solid var(--border);
+  top: 50%;
+  left: 20%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
 .title-bar button.resize {
   background:
     linear-gradient(var(--border) 0%, var(--border) 100%) left 58%,
@@ -337,6 +390,12 @@ h1 {
   font-size: 0.7rem;
   padding-top: 5px;
   opacity: 0.7;
+}
+
+.footer a {
+  display: inline-block;
+  min-height: 24px;
+  padding: 0.15rem 0;
 }
 
 /* Mobile Responsive Styles */
@@ -387,6 +446,7 @@ h1 {
   /* Adjust title bar elements */
   .title-bar .title {
     font-size: 1rem;
+    color: var(--subtext);
   }
 
   .title-bar button {

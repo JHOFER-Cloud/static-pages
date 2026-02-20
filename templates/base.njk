@@ -1,4 +1,5 @@
 <!doctype html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +21,15 @@
 </head>
 <body>
   {{ content | safe }}
+  <script>
+    function goBack() {
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        window.location.href = '/';
+      }
+    }
+  </script>
   <script type="module">
     // Vercel Speed Insights
     import { injectSpeedInsights } from 'https://cdn.jsdelivr.net/npm/@vercel/speed-insights@1.2.0/+esm';
@@ -29,4 +39,14 @@
     import { inject } from 'https://cdn.jsdelivr.net/npm/@vercel/analytics@1.5.0/+esm';
     inject();
   </script>
+  {% if vercelOwnerId and vercelProjectId %}
+  <script
+    src="https://vercel.live/_next-live/feedback/feedback.js"
+    data-explicit-opt-in="true"
+    data-owner-id="{{ vercelOwnerId }}"
+    data-project-id="{{ vercelProjectId }}"
+    data-branch="main"
+  ></script>
+  {% endif %}
 </body>
+</html>
