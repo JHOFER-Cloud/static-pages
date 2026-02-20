@@ -31,8 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
           playlistName.parentNode.replaceChild(link, playlistName);
 
-          // Disable hover effect on mobile by hiding iframe
-          iframe.style.display = "none";
+          // Remove iframe entirely on mobile - not needed and causes a11y issues
+          iframe.remove();
         }
       }
     });
