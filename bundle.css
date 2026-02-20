@@ -11,6 +11,7 @@
   --crust: rgb(17, 17, 27);
   --text: rgb(147, 154, 183);
   --accent: rgb(166, 218, 149);
+  --sapphire: rgb(125, 196, 228);
 }
 
 * {
@@ -47,7 +48,7 @@ h1 {
 .project-desc {
   margin: 0;
   padding-left: 1rem;
-  color: var(--overlay);
+  color: var(--text);
   font-size: 0.9rem;
   text-align: left;
 }
@@ -118,14 +119,14 @@ side-by-side > .box {
   align-items: center;
   gap: 0.5rem;
   padding: 0.35rem 0.5rem;
-  color: var(--overlay);
+  color: var(--accent);
   transition: color 200ms ease;
   font-size: 0.95rem;
   text-decoration: none;
 }
 
 .playlist-name:hover {
-  color: var(--accent);
+  color: var(--sapphire);
   text-decoration: none;
 }
 
@@ -137,7 +138,7 @@ side-by-side > .box {
 }
 
 .playlist-item:hover .playlist-name {
-  color: var(--accent);
+  color: var(--sapphire);
 }
 
 .playlist-item:hover .playlist-name::before {
@@ -189,11 +190,17 @@ ul li:last-child {
 }
 
 a {
-  color: var(--overlay);
+  color: var(--accent);
 }
 
 a:hover {
-  color: var(--accent);
+  color: var(--sapphire);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--sapphire);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 body {
