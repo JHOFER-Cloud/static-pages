@@ -6,7 +6,7 @@ permalink: 404.html
 <main>
   <div class="box error-page">
     <div class="title-bar">
-      <button onclick="history.back()" aria-label="Go back" class="back"></button>
+      <button onclick="goBack()" aria-label="Go back" class="back"></button>
       <h1 class="title">404 - Page Not Found</h1>
       <button aria-label="Resize" class="resize"></button>
     </div>
@@ -61,12 +61,6 @@ permalink: 404.html
     color: var(--subtext);
     margin: 0 0 2rem 0;
     max-width: 500px;
-  }
-
-  .error-actions,
-  .back-button,
-  .button-icon {
-    display: none;
   }
 
   @media screen and (max-width: 768px) {

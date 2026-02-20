@@ -21,6 +21,15 @@
 </head>
 <body>
   {{ content | safe }}
+  <script>
+    function goBack() {
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        window.location.href = '/';
+      }
+    }
+  </script>
   <script type="module">
     // Vercel Speed Insights
     import { injectSpeedInsights } from 'https://cdn.jsdelivr.net/npm/@vercel/speed-insights@1.2.0/+esm';
