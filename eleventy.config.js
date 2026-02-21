@@ -1,18 +1,16 @@
 import { readFileSync } from "fs";
 
-let vercelOwnerId = process.env.VERCEL_ORG_ID || "";
-let vercelProjectId = process.env.VERCEL_PROJECT_ID || "";
+let vercelOwnerId = "";
+let vercelProjectId = "";
 
-if (!vercelOwnerId || !vercelProjectId) {
-  try {
-    const vercelProject = JSON.parse(
-      readFileSync(".vercel/project.json", "utf-8"),
-    );
-    vercelOwnerId = vercelOwnerId || vercelProject.orgId || "";
-    vercelProjectId = vercelProjectId || vercelProject.projectId || "";
-  } catch {
-    // .vercel/project.json not present (e.g. CI or fresh clone)
-  }
+try {
+  const vercelProject = JSON.parse(
+    readFileSync(".vercel/project.json", "utf-8"),
+  );
+  vercelOwnerId = vercelProject.orgId || "";
+  vercelProjectId = vercelProject.projectId || "";
+} catch {
+  // .vercel/project.json not present — toolbar will not be injected
 }
 
 export default function (eleventyConfig) {
