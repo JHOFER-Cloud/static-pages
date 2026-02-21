@@ -3,14 +3,19 @@ import { readFileSync } from "fs";
 let vercelOwnerId = "";
 let vercelProjectId = "";
 
-try {
-  const vercelProject = JSON.parse(
-    readFileSync(".vercel/project.json", "utf-8"),
-  );
-  vercelOwnerId = vercelProject.orgId || "";
-  vercelProjectId = vercelProject.projectId || "";
-} catch {
-  // .vercel/project.json not present — toolbar will not be injected
+// Only inject toolbar locally — on Vercel builds (any environment),
+// skip it: preview deployments get the toolbar injected by Vercel automatically,
+// and production should never have it.
+if (!process.env.VERCEL) {
+  try {
+    const vercelProject = JSON.parse(
+      readFileSync(".vercel/project.json", "utf-8"),
+    );
+    vercelOwnerId = vercelProject.orgId || "";
+    vercelProjectId = vercelProject.projectId || "";
+  } catch {
+    // .vercel/project.json not present — toolbar will not be injected
+  }
 }
 
 export default function (eleventyConfig) {
