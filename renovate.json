@@ -1,10 +1,24 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "reviewers": ["ojsef39"],
+  "reviewers": [
+    "ojsef39"
+  ],
   "nix": {
     "enabled": true
   },
   "lockFileMaintenance": {
     "enabled": true
-  }
+  },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/templates/base\\.njk/"
+      ],
+      "matchStrings": [
+        "https://cdn\\.jsdelivr\\.net/npm/(?<depName>(?:@[^@/]+/)?[^@/]+)@(?<currentValue>[^/]+)/\\+esm"
+      ],
+      "datasourceTemplate": "npm"
+    }
+  ]
 }
