@@ -30,12 +30,16 @@
       {pkgs}: {
         default = pkgs.mkShell {
           packages = with pkgs; [
-            node2nix
             nodejs
             prettier
-            nodePackages.vercel
             (pkgs.writeShellScriptBin "d-run" "npm run dev")
           ];
+          shellHook = ''
+            if ! command -v vercel &> /dev/null; then
+              echo "Installing vercel via brew..."
+              brew install -q vercel-cli
+            fi
+          '';
         };
       }
     );
