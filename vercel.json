@@ -15,7 +15,7 @@
       ]
     },
     {
-      "source": "/:path+",
+      "source": "/:path+{/}?",
       "destination": "https://pages.jhofer.de/:path+",
       "permanent": true,
       "has": [
