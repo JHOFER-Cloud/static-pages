@@ -1,8 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "reviewers": [
-    "ojsef39"
-  ],
+  "extends": ["github>JHOFER-Cloud/renovate-presets//default"],
+  "reviewers": ["ojsef39"],
   "nix": {
     "enabled": true
   },
@@ -20,9 +19,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": [
-        "/templates/base\\.njk/"
-      ],
+      "managerFilePatterns": ["/templates/base\\.njk/"],
       "matchStrings": [
         "https://cdn\\.jsdelivr\\.net/npm/(?<depName>(?:@[^@/]+/)?[^@/]+)@(?<currentValue>[^/]+)/\\+esm"
       ],
