@@ -9,6 +9,14 @@
   "lockFileMaintenance": {
     "enabled": true
   },
+  "packageRules": [
+    {
+      "matchManagers": ["nix"],
+      "lockFileMaintenance": {
+        "enabled": false
+      }
+    }
+  ],
   "customManagers": [
     {
       "customType": "regex",
